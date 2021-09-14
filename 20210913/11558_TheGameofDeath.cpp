@@ -6,6 +6,35 @@
 #include <cmath>
 using namespace std;
 
+int main() {
+
+    int T;
+    scanf("%d", &T);
+
+    for (int i=0; i<T; i++) {
+        
+        int N;
+        scanf("%d", &N);
+
+        vector<int> v(N+1);
+        for (int i=1; i<=N; i++)
+            scanf("%d", &v[i]);
+
+        int cnt = 1;
+        int p = v[1];
+        while (p != N && cnt <= N) {
+            p = v[p];
+            cnt++;
+        }
+
+        if (cnt > N) cnt = 0;
+        printf("%d\n", cnt);
+    }
+    return 0;
+}
+
+//TC
+
 // 1
 // 2
 // 1
@@ -63,30 +92,3 @@ using namespace std;
 // 10
 // 1
 // output: 0
-
-int main() {
-
-    int T;
-    scanf("%d", &T);
-
-    for (int i=0; i<T; i++) {
-        
-        int N;
-        scanf("%d", &N);
-
-        vector<int> v(N+1);
-        for (int i=1; i<=N; i++)
-            scanf("%d", &v[i]);
-
-        int cnt = 1;
-        int p = v[1];
-        while (p != N && cnt <= N) {
-            p = v[p];
-            cnt++;
-        }
-
-        if (cnt > N) cnt = 0;
-        printf("%d\n", cnt);
-    }
-    return 0;
-}
