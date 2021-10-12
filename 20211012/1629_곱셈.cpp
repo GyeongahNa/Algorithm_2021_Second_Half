@@ -13,7 +13,7 @@ using iii = tuple<int, int, int>;
 
 int solve(int A, int B, int C) {
     
-    if (B == 0) return 1;
+    if (B == 0) return 1%C;
     int tmp = solve(A, B/2, C);
     if (B%2 == 0) return (1LL * tmp * tmp) % C; 
     return (1LL * tmp * tmp) % C * A % C;
