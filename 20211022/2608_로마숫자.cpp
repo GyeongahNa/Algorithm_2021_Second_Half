@@ -40,7 +40,6 @@ int main() {
     cout<<sum<<endl;
 
     int idx = 0;
-    int t = 0;
     while (sum) {
         int sh = sum/vnum[idx];
         if (sh != 0) {
