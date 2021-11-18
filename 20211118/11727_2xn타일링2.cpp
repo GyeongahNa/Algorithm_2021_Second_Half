@@ -12,17 +12,14 @@ using namespace std;
 
 int dp[1001];
 
-// dp[n] = dp[n-1] + dp[n-2]*2 로 푸는 것이 더 합리적으로 보임
 int main() {
     
     int N;
     scanf("%d", &N);
     
-    dp[1] = 1; 
-    for (int i=2; i<=N; i++) {
-        if (i%2 == 0) dp[i] = (2*dp[i-1]+1)%10007;
-        else dp[i] = (2*dp[i-1]-1)%10007;
-    }
+    dp[1] = 1; dp[2] = 3;
+    for (int i=3; i<=N; i++)
+    	dp[i] = (dp[i-1] + 2*dp[i-2])%10007;
     printf("%d", dp[N]);
     return 0;
 }
